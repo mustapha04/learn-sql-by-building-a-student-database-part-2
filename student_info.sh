@@ -38,3 +38,5 @@ echo "$($PSQL "SELECT DISTINCT(course) FROM students FULL JOIN majors USING(majo
 
 echo -e "\nList of courses, in alphabetical order, with only one student enrolled:"
 echo "$($PSQL "SELECT course FROM students INNER JOIN majors_courses USING(major_id) INNER JOIN courses USING(course_id) GROUP BY course HAVING COUNT(*) = 1 ORDER BY course")"
+
+echo -e "\nAll course names whose first letter is before 'D' in the alphabet:"
