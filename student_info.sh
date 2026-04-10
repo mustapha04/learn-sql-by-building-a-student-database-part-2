@@ -10,3 +10,5 @@ echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE gpa = 4.0")
 
 echo -e "\nAll course names whose first letter is before 'D' in the alphabet:"
 echo "$($PSQL "SELECT course FROM courses WHERE course < 'D' ORDER BY course")"
+
+echo -e "\nLast name of students whose last name contains a case insensitive 'sa' or have an 'r' as the second to last letter:"
