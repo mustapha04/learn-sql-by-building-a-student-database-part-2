@@ -121,3 +121,195 @@ trap '__vsc_preexec_all "$_"' DEBUG
 __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 echo hello SQL
 psql --username=freecodecamp --dbname=postgres
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+export HISTCONTROL="ignorespace"
+builtin unset VSCODE_PREVENT_SHELL_HISTORY
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups|ignorespace).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=0
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+psql -U postgres < /workspace/project/students.sql 2>&1
+cat /workspace/project/.freeCodeCamp/test/10.test.js
+for f in /workspace/project/.freeCodeCamp/test/20.test.js /workspace/project/.freeCodeCamp/test/30.test.js /workspace/project/.freeCodeCamp/test/40.test.js /workspace/project/.freeCodeCamp/test/50.test.js /workspace/project/.freeCodeCamp/test/60.test.js /workspace/project/.freeCodeCamp/test/70.test.js /workspace/project/.freeCodeCamp/test/80.test.js /workspace/project/.freeCodeCamp/test/90.test.js
+cat /workspace/project/.freeCodeCamp/test/1220.test.js
+for f in $(ls /workspace/project/.freeCodeCamp/test/10.test.js /workspace/project/.freeCodeCamp/test/1220.test.js /workspace/project/.freeCodeCamp/test/1230.test.js /workspace/project/.freeCodeCamp/test/1240.test.js /workspace/project/.freeCodeCamp/test/1250.test.js /workspace/project/.freeCodeCamp/test/1260.test.js /workspace/project/.freeCodeCamp/test/1265.test.js /workspace/project/.freeCodeCamp/test/1270.test.js /workspace/project/.freeCodeCamp/test/1280.test.js /workspace/project/.freeCodeCamp/test/1290.test.js /workspace/project/.freeCodeCamp/test/1300.test.js /workspace/project/.freeCodeCamp/test/1310.test.js /workspace/project/.freeCodeCamp/test/1320.test.js /workspace/project/.freeCodeCamp/test/1330.test.js /workspace/project/.freeCodeCamp/test/1340.test.js /workspace/project/.freeCodeCamp/test/1360.test.js /workspace/project/.freeCodeCamp/test/1370.test.js /workspace/project/.freeCodeCamp/test/1380.test.js /workspace/project/.freeCodeCamp/test/1390.test.js /workspace/project/.freeCodeCamp/test/1400.test.js /workspace/project/.freeCodeCamp/test/1410.test.js /workspace/project/.freeCodeCamp/test/1420.test.js /workspace/project/.freeCodeCamp/test/1430.test.js /workspace/project/.freeCodeCamp/test/1440.test.js /workspace/project/.freeCodeCamp/test/1450.test.js /workspace/project/.freeCodeCamp/test/1460.test.js /workspace/project/.freeCodeCamp/test/1470.test.js /workspace/project/.freeCodeCamp/test/1480.test.js /workspace/project/.freeCodeCamp/test/1490.test.js /workspace/project/.freeCodeCamp/test/1500.test.js /workspace/project/.freeCodeCamp/test/1510.test.js /workspace/project/.freeCodeCamp/test/1520.test.js /workspace/project/.freeCodeCamp/test/1530.test.js /workspace/project/.freeCodeCamp/test/1540.test.js /workspace/project/.freeCodeCamp/test/1550.test.js /workspace/project/.freeCodeCamp/test/1560.test.js /workspace/project/.freeCodeCamp/test/1570.test.js /workspace/project/.freeCodeCamp/test/1580.test.js /workspace/project/.freeCodeCamp/test/1590.test.js /workspace/project/.freeCodeCamp/test/1600.test.js /workspace/project/.freeCodeCamp/test/1610.test.js /workspace/project/.freeCodeCamp/test/1620.test.js /workspace/project/.freeCodeCamp/test/1630.test.js /workspace/project/.freeCodeCamp/test/1640.test.js /workspace/project/.freeCodeCamp/test/1650.test.js /workspace/project/.freeCodeCamp/test/1670.test.js /workspace/project/.freeCodeCamp/test/1680.test.js /workspace/project/.freeCodeCamp/test/1690.test.js /workspace/project/.freeCodeCamp/test/1700.test.js /workspace/project/.freeCodeCamp/test/1710.test.js /workspace/project/.freeCodeCamp/test/1715.test.js /workspace/project/.freeCodeCamp/test/1720.test.js /workspace/project/.freeCodeCamp/test/1730.test.js /workspace/project/.freeCodeCamp/test/1740.test.js /workspace/project/.freeCodeCamp/test/1750.test.js /workspace/project/.freeCodeCamp/test/1760.test.js /workspace/project/.freeCodeCamp/test/1770.test.js /workspace/project/.freeCodeCamp/test/1780.test.js /workspace/project/.freeCodeCamp/test/1790.test.js /workspace/project/.freeCodeCamp/test/1800.test.js /workspace/project/.freeCodeCamp/test/1810.test.js /workspace/project/.freeCodeCamp/test/1820.test.js /workspace/project/.freeCodeCamp/test/1830.test.js /workspace/project/.freeCodeCamp/test/1835.test.js /workspace/project/.freeCodeCamp/test/1840.test.js /workspace/project/.freeCodeCamp/test/1850.test.js /workspace/project/.freeCodeCamp/test/1860.test.js /workspace/project/.freeCodeCamp/test/1870.test.js /workspace/project/.freeCodeCamp/test/1880.test.js /workspace/project/.freeCodeCamp/test/1890.test.js /workspace/project/.freeCodeCamp/test/1900.test.js /workspace/project/.freeCodeCamp/test/1910.test.js /workspace/project/.freeCodeCamp/test/1920.test.js /workspace/project/.freeCodeCamp/test/1930.test.js /workspace/project/.freeCodeCamp/test/1940.test.js /workspace/project/.freeCodeCamp/test/1950.test.js /workspace/project/.freeCodeCamp/test/1960.test.js /workspace/project/.freeCodeCamp/test/1970.test.js /workspace/project/.freeCodeCamp/test/1980.test.js /workspace/project/.freeCodeCamp/test/1990.test.js /workspace/project/.freeCodeCamp/test/2000.test.js /workspace/project/.freeCodeCamp/test/2010.test.js /workspace/project/.freeCodeCamp/test/2020.test.js /workspace/project/.freeCodeCamp/test/2030.test.js /workspace/project/.freeCodeCamp/test/2040.test.js /workspace/project/.freeCodeCamp/test/2050.test.js /workspace/project/.freeCodeCamp/test/2060.test.js /workspace/project/.freeCodeCamp/test/2070.test.js /workspace/project/.freeCodeCamp/test/2075.test.js /workspace/project/.freeCodeCamp/test/2080.test.js /workspace/project/.freeCodeCamp/test/2090.test.js /workspace/project/.freeCodeCamp/test/20.test.js /workspace/project/.freeCodeCamp/test/2100.test.js /workspace/project/.freeCodeCamp/test/2110.test.js /workspace/project/.freeCodeCamp/test/2120.test.js /workspace/project/.freeCodeCamp/test/2130.test.js /workspace/project/.freeCodeCamp/test/2140.test.js /workspace/project/.freeCodeCamp/test/2150.test.js /workspace/project/.freeCodeCamp/test/2160.test.js /workspace/project/.freeCodeCamp/test/2170.test.js /workspace/project/.freeCodeCamp/test/2180.test.js /workspace/project/.freeCodeCamp/test/2190.test.js /workspace/project/.freeCodeCamp/test/2200.test.js /workspace/project/.freeCodeCamp/test/2210.test.js /workspace/project/.freeCodeCamp/test/2220.test.js /workspace/project/.freeCodeCamp/test/2230.test.js /workspace/project/.freeCodeCamp/test/2240.test.js /workspace/project/.freeCodeCamp/test/2245.test.js /workspace/project/.freeCodeCamp/test/2250.test.js /workspace/project/.freeCodeCamp/test/2260.test.js /workspace/project/.freeCodeCamp/test/2265.test.js /workspace/project/.freeCodeCamp/test/2270.test.js /workspace/project/.freeCodeCamp/test/2280.test.js /workspace/project/.freeCodeCamp/test/2290.test.js /workspace/project/.freeCodeCamp/test/2310.test.js /workspace/project/.freeCodeCamp/test/2320.test.js /workspace/project/.freeCodeCamp/test/2330.test.js /workspace/project/.freeCodeCamp/test/2340.test.js /workspace/project/.freeCodeCamp/test/2350.test.js /workspace/project/.freeCodeCamp/test/2360.test.js /workspace/project/.freeCodeCamp/test/2370.test.js /workspace/project/.freeCodeCamp/test/2390.test.js /workspace/project/.freeCodeCamp/test/2400.test.js /workspace/project/.freeCodeCamp/test/2410.test.js /workspace/project/.freeCodeCamp/test/2420.test.js /workspace/project/.freeCodeCamp/test/2430.test.js /workspace/project/.freeCodeCamp/test/2440.test.js /workspace/project/.freeCodeCamp/test/2450.test.js /workspace/project/.freeCodeCamp/test/2460.test.js /workspace/project/.freeCodeCamp/test/30.test.js /workspace/project/.freeCodeCamp/test/40.test.js /workspace/project/.freeCodeCamp/test/50.test.js /workspace/project/.freeCodeCamp/test/60.test.js /workspace/project/.freeCodeCamp/test/70.test.js /workspace/project/.freeCodeCamp/test/80.test.js /workspace/project/.freeCodeCamp/test/90.test.js | sort -V | head -40)
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+head -500
+__vsc_prompt_cmd_original
+tail -n +500
+cat /workspace/project/.freeCodeCamp/test/1500.test.js /workspace/project/.freeCodeCamp/test/1510.test.js /workspace/project/.freeCodeCamp/test/1520.test.js /workspace/project/.freeCodeCamp/test/1530.test.js /workspace/project/.freeCodeCamp/test/1540.test.js /workspace/project/.freeCodeCamp/test/1550.test.js /workspace/project/.freeCodeCamp/test/1560.test.js /workspace/project/.freeCodeCamp/test/1570.test.js /workspace/project/.freeCodeCamp/test/1580.test.js /workspace/project/.freeCodeCamp/test/1590.test.js /workspace/project/.freeCodeCamp/test/1600.test.js /workspace/project/.freeCodeCamp/test/1610.test.js /workspace/project/.freeCodeCamp/test/1620.test.js /workspace/project/.freeCodeCamp/test/1630.test.js /workspace/project/.freeCodeCamp/test/1640.test.js /workspace/project/.freeCodeCamp/test/1650.test.js /workspace/project/.freeCodeCamp/test/1670.test.js /workspace/project/.freeCodeCamp/test/1680.test.js /workspace/project/.freeCodeCamp/test/1690.test.js /workspace/project/.freeCodeCamp/test/1700.test.js
+cat /workspace/project/.freeCodeCamp/test/1710.test.js /workspace/project/.freeCodeCamp/test/1715.test.js /workspace/project/.freeCodeCamp/test/1720.test.js
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+cat /workspace/project/.freeCodeCamp/test/1730.test.js /workspace/project/.freeCodeCamp/test/1740.test.js /workspace/project/.freeCodeCamp/test/1750.test.js /workspace/project/.freeCodeCamp/test/1760.test.js /workspace/project/.freeCodeCamp/test/1770.test.js /workspace/project/.freeCodeCamp/test/1780.test.js /workspace/project/.freeCodeCamp/test/1790.test.js /workspace/project/.freeCodeCamp/test/1800.test.js /workspace/project/.freeCodeCamp/test/1810.test.js /workspace/project/.freeCodeCamp/test/1820.test.js /workspace/project/.freeCodeCamp/test/1830.test.js /workspace/project/.freeCodeCamp/test/1835.test.js /workspace/project/.freeCodeCamp/test/1840.test.js /workspace/project/.freeCodeCamp/test/1850.test.js /workspace/project/.freeCodeCamp/test/1860.test.js /workspace/project/.freeCodeCamp/test/1870.test.js /workspace/project/.freeCodeCamp/test/1880.test.js /workspace/project/.freeCodeCamp/test/1890.test.js /workspace/project/.freeCodeCamp/test/1900.test.js /workspace/project/.freeCodeCamp/test/1910.test.js
+cat /workspace/project/.freeCodeCamp/test/1920.test.js /workspace/project/.freeCodeCamp/test/1930.test.js /workspace/project/.freeCodeCamp/test/1940.test.js /workspace/project/.freeCodeCamp/test/1950.test.js /workspace/project/.freeCodeCamp/test/1960.test.js /workspace/project/.freeCodeCamp/test/1970.test.js /workspace/project/.freeCodeCamp/test/1980.test.js /workspace/project/.freeCodeCamp/test/1990.test.js /workspace/project/.freeCodeCamp/test/2000.test.js /workspace/project/.freeCodeCamp/test/2010.test.js /workspace/project/.freeCodeCamp/test/2020.test.js /workspace/project/.freeCodeCamp/test/2030.test.js /workspace/project/.freeCodeCamp/test/2040.test.js /workspace/project/.freeCodeCamp/test/2050.test.js /workspace/project/.freeCodeCamp/test/2060.test.js /workspace/project/.freeCodeCamp/test/2070.test.js /workspace/project/.freeCodeCamp/test/2075.test.js /workspace/project/.freeCodeCamp/test/2080.test.js /workspace/project/.freeCodeCamp/test/2090.test.js /workspace/project/.freeCodeCamp/test/2100.test.js
+cat /workspace/project/.freeCodeCamp/test/2110.test.js /workspace/project/.freeCodeCamp/test/2120.test.js /workspace/project/.freeCodeCamp/test/2130.test.js /workspace/project/.freeCodeCamp/test/2140.test.js /workspace/project/.freeCodeCamp/test/2150.test.js /workspace/project/.freeCodeCamp/test/2160.test.js /workspace/project/.freeCodeCamp/test/2170.test.js /workspace/project/.freeCodeCamp/test/2180.test.js /workspace/project/.freeCodeCamp/test/2190.test.js /workspace/project/.freeCodeCamp/test/2200.test.js /workspace/project/.freeCodeCamp/test/2210.test.js /workspace/project/.freeCodeCamp/test/2220.test.js /workspace/project/.freeCodeCamp/test/2230.test.js /workspace/project/.freeCodeCamp/test/2240.test.js /workspace/project/.freeCodeCamp/test/2245.test.js /workspace/project/.freeCodeCamp/test/2250.test.js /workspace/project/.freeCodeCamp/test/2260.test.js /workspace/project/.freeCodeCamp/test/2265.test.js /workspace/project/.freeCodeCamp/test/2270.test.js /workspace/project/.freeCodeCamp/test/2280.test.js
+cat /workspace/project/.freeCodeCamp/test/2290.test.js /workspace/project/.freeCodeCamp/test/2310.test.js /workspace/project/.freeCodeCamp/test/2320.test.js /workspace/project/.freeCodeCamp/test/2330.test.js /workspace/project/.freeCodeCamp/test/2340.test.js /workspace/project/.freeCodeCamp/test/2350.test.js /workspace/project/.freeCodeCamp/test/2360.test.js /workspace/project/.freeCodeCamp/test/2370.test.js /workspace/project/.freeCodeCamp/test/2390.test.js /workspace/project/.freeCodeCamp/test/2400.test.js /workspace/project/.freeCodeCamp/test/2410.test.js /workspace/project/.freeCodeCamp/test/2420.test.js /workspace/project/.freeCodeCamp/test/2430.test.js /workspace/project/.freeCodeCamp/test/2440.test.js /workspace/project/.freeCodeCamp/test/2450.test.js /workspace/project/.freeCodeCamp/test/2460.test.js
+cat /workspace/project/.freeCodeCamp/test/utils.js
+cat /workspace/project/.freeCodeCamp/.psqlrc
+echo $HISTFILE
+echo "PSQLRC=$PSQLRC"
+cat ~/.bashrc
+cat /workspace/project/.freeCodeCamp/test/1360.test.js
+cat /workspace/project/.freeCodeCamp/test/.next_command
+tail -20 /workspace/.bash_history
+head -5 /workspace/project/.freeCodeCamp/test/.next_command
+head -60 /workspace/project/.freeCodeCamp/server.js
+grep -n "next_command\|watcher\|watch\|trigger\|runTest\|mocha" /workspace/project/.freeCodeCamp/server.js
+cat /workspace/project/.freeCodeCamp/.mocharc.json
+for f in /workspace/project/.freeCodeCamp/test/1230.test.js /workspace/project/.freeCodeCamp/test/1240.test.js /workspace/project/.freeCodeCamp/test/1250.test.js /workspace/project/.freeCodeCamp/test/1260.test.js /workspace/project/.freeCodeCamp/test/1265.test.js /workspace/project/.freeCodeCamp/test/1270.test.js /workspace/project/.freeCodeCamp/test/1280.test.js
+tail -30 /workspace/pg.log
+tail -30 /workspace/queryResults.log 2> /dev/null
+ps aux
+grep -n "app\.\(get\|post\|put\)\|router\.\|\/run\|\/test\|\/result\|\/reset" /workspace/project/.freeCodeCamp/server.js
+sed -n '280,380p' /workspace/project/.freeCodeCamp/server.js
+sed -n '200,280p' /workspace/project/.freeCodeCamp/server.js
+grep -n "app\.\(get\|post\|put\|delete\)\|router" /workspace/project/.freeCodeCamp/server.js
+sed -n '130,200p' /workspace/project/.freeCodeCamp/server.js
+cd /workspace/project
+cd /workspace/project
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+export HISTCONTROL="ignorespace"
+builtin unset VSCODE_PREVENT_SHELL_HISTORY
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups|ignorespace).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=0
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+cd /workspace/project/.freeCodeCamp
+tail -5 /workspace/.bash_history
+echo "HISTFILE=$HISTFILE"
+ls --color=auto /workspace/project/.freeCodeCamp/test/10.test.js /workspace/project/.freeCodeCamp/test/1220.test.js /workspace/project/.freeCodeCamp/test/1230.test.js /workspace/project/.freeCodeCamp/test/1240.test.js /workspace/project/.freeCodeCamp/test/1250.test.js /workspace/project/.freeCodeCamp/test/1260.test.js /workspace/project/.freeCodeCamp/test/1265.test.js /workspace/project/.freeCodeCamp/test/1270.test.js /workspace/project/.freeCodeCamp/test/1280.test.js /workspace/project/.freeCodeCamp/test/1290.test.js /workspace/project/.freeCodeCamp/test/1300.test.js /workspace/project/.freeCodeCamp/test/1310.test.js /workspace/project/.freeCodeCamp/test/1320.test.js /workspace/project/.freeCodeCamp/test/1330.test.js /workspace/project/.freeCodeCamp/test/1340.test.js /workspace/project/.freeCodeCamp/test/1360.test.js /workspace/project/.freeCodeCamp/test/1370.test.js /workspace/project/.freeCodeCamp/test/1380.test.js /workspace/project/.freeCodeCamp/test/1390.test.js /workspace/project/.freeCodeCamp/test/1400.test.js /workspace/project/.freeCodeCamp/test/1410.test.js /workspace/project/.freeCodeCamp/test/1420.test.js /workspace/project/.freeCodeCamp/test/1430.test.js /workspace/project/.freeCodeCamp/test/1440.test.js /workspace/project/.freeCodeCamp/test/1450.test.js /workspace/project/.freeCodeCamp/test/1460.test.js /workspace/project/.freeCodeCamp/test/1470.test.js /workspace/project/.freeCodeCamp/test/1480.test.js /workspace/project/.freeCodeCamp/test/1490.test.js /workspace/project/.freeCodeCamp/test/1500.test.js /workspace/project/.freeCodeCamp/test/1510.test.js /workspace/project/.freeCodeCamp/test/1520.test.js /workspace/project/.freeCodeCamp/test/1530.test.js /workspace/project/.freeCodeCamp/test/1540.test.js /workspace/project/.freeCodeCamp/test/1550.test.js /workspace/project/.freeCodeCamp/test/1560.test.js /workspace/project/.freeCodeCamp/test/1570.test.js /workspace/project/.freeCodeCamp/test/1580.test.js /workspace/project/.freeCodeCamp/test/1590.test.js /workspace/project/.freeCodeCamp/test/1600.test.js /workspace/project/.freeCodeCamp/test/1610.test.js /workspace/project/.freeCodeCamp/test/1620.test.js /workspace/project/.freeCodeCamp/test/1630.test.js /workspace/project/.freeCodeCamp/test/1640.test.js /workspace/project/.freeCodeCamp/test/1650.test.js /workspace/project/.freeCodeCamp/test/1670.test.js /workspace/project/.freeCodeCamp/test/1680.test.js /workspace/project/.freeCodeCamp/test/1690.test.js /workspace/project/.freeCodeCamp/test/1700.test.js /workspace/project/.freeCodeCamp/test/1710.test.js /workspace/project/.freeCodeCamp/test/1715.test.js /workspace/project/.freeCodeCamp/test/1720.test.js /workspace/project/.freeCodeCamp/test/1730.test.js /workspace/project/.freeCodeCamp/test/1740.test.js /workspace/project/.freeCodeCamp/test/1750.test.js /workspace/project/.freeCodeCamp/test/1760.test.js /workspace/project/.freeCodeCamp/test/1770.test.js /workspace/project/.freeCodeCamp/test/1780.test.js /workspace/project/.freeCodeCamp/test/1790.test.js /workspace/project/.freeCodeCamp/test/1800.test.js /workspace/project/.freeCodeCamp/test/1810.test.js /workspace/project/.freeCodeCamp/test/1820.test.js /workspace/project/.freeCodeCamp/test/1830.test.js /workspace/project/.freeCodeCamp/test/1835.test.js /workspace/project/.freeCodeCamp/test/1840.test.js /workspace/project/.freeCodeCamp/test/1850.test.js /workspace/project/.freeCodeCamp/test/1860.test.js /workspace/project/.freeCodeCamp/test/1870.test.js /workspace/project/.freeCodeCamp/test/1880.test.js /workspace/project/.freeCodeCamp/test/1890.test.js /workspace/project/.freeCodeCamp/test/1900.test.js /workspace/project/.freeCodeCamp/test/1910.test.js /workspace/project/.freeCodeCamp/test/1920.test.js /workspace/project/.freeCodeCamp/test/1930.test.js /workspace/project/.freeCodeCamp/test/1940.test.js /workspace/project/.freeCodeCamp/test/1950.test.js /workspace/project/.freeCodeCamp/test/1960.test.js /workspace/project/.freeCodeCamp/test/1970.test.js /workspace/project/.freeCodeCamp/test/1980.test.js /workspace/project/.freeCodeCamp/test/1990.test.js /workspace/project/.freeCodeCamp/test/2000.test.js /workspace/project/.freeCodeCamp/test/2010.test.js /workspace/project/.freeCodeCamp/test/2020.test.js /workspace/project/.freeCodeCamp/test/2030.test.js /workspace/project/.freeCodeCamp/test/2040.test.js /workspace/project/.freeCodeCamp/test/2050.test.js /workspace/project/.freeCodeCamp/test/2060.test.js /workspace/project/.freeCodeCamp/test/2070.test.js /workspace/project/.freeCodeCamp/test/2075.test.js /workspace/project/.freeCodeCamp/test/2080.test.js /workspace/project/.freeCodeCamp/test/2090.test.js /workspace/project/.freeCodeCamp/test/20.test.js /workspace/project/.freeCodeCamp/test/2100.test.js /workspace/project/.freeCodeCamp/test/2110.test.js /workspace/project/.freeCodeCamp/test/2120.test.js /workspace/project/.freeCodeCamp/test/2130.test.js /workspace/project/.freeCodeCamp/test/2140.test.js /workspace/project/.freeCodeCamp/test/2150.test.js /workspace/project/.freeCodeCamp/test/2160.test.js /workspace/project/.freeCodeCamp/test/2170.test.js /workspace/project/.freeCodeCamp/test/2180.test.js /workspace/project/.freeCodeCamp/test/2190.test.js /workspace/project/.freeCodeCamp/test/2200.test.js /workspace/project/.freeCodeCamp/test/2210.test.js /workspace/project/.freeCodeCamp/test/2220.test.js /workspace/project/.freeCodeCamp/test/2230.test.js /workspace/project/.freeCodeCamp/test/2240.test.js /workspace/project/.freeCodeCamp/test/2245.test.js /workspace/project/.freeCodeCamp/test/2250.test.js /workspace/project/.freeCodeCamp/test/2260.test.js /workspace/project/.freeCodeCamp/test/2265.test.js /workspace/project/.freeCodeCamp/test/2270.test.js /workspace/project/.freeCodeCamp/test/2280.test.js /workspace/project/.freeCodeCamp/test/2290.test.js /workspace/project/.freeCodeCamp/test/2310.test.js /workspace/project/.freeCodeCamp/test/2320.test.js /workspace/project/.freeCodeCamp/test/2330.test.js /workspace/project/.freeCodeCamp/test/2340.test.js /workspace/project/.freeCodeCamp/test/2350.test.js /workspace/project/.freeCodeCamp/test/2360.test.js /workspace/project/.freeCodeCamp/test/2370.test.js /workspace/project/.freeCodeCamp/test/2390.test.js /workspace/project/.freeCodeCamp/test/2400.test.js /workspace/project/.freeCodeCamp/test/2410.test.js /workspace/project/.freeCodeCamp/test/2420.test.js /workspace/project/.freeCodeCamp/test/2430.test.js /workspace/project/.freeCodeCamp/test/2440.test.js /workspace/project/.freeCodeCamp/test/2450.test.js /workspace/project/.freeCodeCamp/test/2460.test.js /workspace/project/.freeCodeCamp/test/30.test.js /workspace/project/.freeCodeCamp/test/40.test.js /workspace/project/.freeCodeCamp/test/50.test.js /workspace/project/.freeCodeCamp/test/60.test.js /workspace/project/.freeCodeCamp/test/70.test.js /workspace/project/.freeCodeCamp/test/80.test.js /workspace/project/.freeCodeCamp/test/90.test.js
+echo "TEST_HISTORY_CHECK_12345"
+psql --username=freecodecamp --dbname=students -c "SELECT 42 AS test_value;" 2> /dev/null
+echo "\d students"
+for f in /workspace/project/.freeCodeCamp/test/2310.test.js /workspace/project/.freeCodeCamp/test/2420.test.js /workspace/project/.freeCodeCamp/test/2450.test.js /workspace/project/.freeCodeCamp/test/2290.test.js
+for f in /workspace/project/.freeCodeCamp/test/2330.test.js /workspace/project/.freeCodeCamp/test/2440.test.js /workspace/project/.freeCodeCamp/test/2110.test.js
+for f in /workspace/project/.freeCodeCamp/test/1290.test.js /workspace/project/.freeCodeCamp/test/1380.test.js /workspace/project/.freeCodeCamp/test/2090.test.js
+sed -n '60,130p' /workspace/project/.freeCodeCamp/server.js
+chmod +x /workspace/project/student_info.sh
+/workspace/project/student_info.sh 2>&1
+chmod +x /workspace/project/automate.sh
+for f in 1570 1570 1670 1680 1715 2340 2350 2360 2370 2390
+cat /workspace/project/.freeCodeCamp/test/1680.test.js
+cat /workspace/project/.freeCodeCamp/test/1450.test.js
+cat /workspace/project/.freeCodeCamp/test/2310.test.js
+psql --username=freecodecamp --dbname=students -c "SELECT ROUND(AVG(gpa), 2) FROM students;" -X --no-align --tuples-only 2> /dev/null
+cat /workspace/project/.freeCodeCamp/test/1940.test.js
+wc -l /workspace/pg.log
+cd /workspace/project
+wc -l /workspace/project/student_info.sh
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+export HISTCONTROL="ignorespace"
+builtin unset VSCODE_PREVENT_SHELL_HISTORY
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups|ignorespace).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=0
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+cd /workspace/project
