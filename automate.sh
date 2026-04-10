@@ -16,6 +16,7 @@ add_cwd() { echo "$1" >> "$CWD_FILE"; }
 
 run_psql_log() {
   psql --username=freecodecamp --dbname="$1" -c "$2" > /dev/null 2>&1
+  sleep 0.5
 }
 
 pipe_psql() {
@@ -325,7 +326,7 @@ run_psql_log "students" "SELECT course FROM courses WHERE course NOT LIKE '% %';
 do_test "1630.test.js"
 
 echo "--- Test 1640 ---"
-run_psql_log "students" "SELECT course FROM courses WHERE course LIKE '%a%';"
+run_psql_log "students" "SELECT course FROM courses WHERE course LIKE '%A%';"
 do_test "1640.test.js"
 
 echo "--- Test 1650 ---"
@@ -599,35 +600,35 @@ run_psql_log "students" "SELECT DISTINCT(major) FROM majors INNER JOIN students 
 do_test "2220.test.js"
 
 echo "--- Test 2230 ---"
-run_psql_log "students" "SELECT * FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL;"
+run_psql_log "students" "SELECT * FROM students RIGHT JOIN majors ON students.major_id = majors.major_id;"
 do_test "2230.test.js"
 
 echo "--- Test 2240 ---"
-run_psql_log "students" "SELECT major FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL;"
+run_psql_log "students" "SELECT * FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL;"
 do_test "2240.test.js"
 
 echo "--- Test 2245 ---"
-run_psql_log "students" "SELECT * FROM students LEFT JOIN majors ON students.major_id = majors.major_id;"
+run_psql_log "students" "SELECT major FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL;"
 do_test "2245.test.js"
 
 echo "--- Test 2250 ---"
-run_psql_log "students" "SELECT * FROM students LEFT JOIN majors ON students.major_id = majors.major_id WHERE major = 'Data Science' OR gpa >= 3.8;"
+run_psql_log "students" "SELECT * FROM students LEFT JOIN majors ON students.major_id = majors.major_id;"
 do_test "2250.test.js"
 
 echo "--- Test 2260 ---"
-run_psql_log "students" "SELECT first_name, last_name, major, gpa FROM students LEFT JOIN majors ON students.major_id = majors.major_id WHERE major = 'Data Science' OR gpa >= 3.8;"
+run_psql_log "students" "SELECT * FROM students LEFT JOIN majors ON students.major_id = majors.major_id WHERE major = 'Data Science' OR gpa >= 3.8;"
 do_test "2260.test.js"
 
 echo "--- Test 2265 ---"
-run_psql_log "students" "SELECT * FROM students FULL JOIN majors ON students.major_id = majors.major_id;"
+run_psql_log "students" "SELECT first_name, last_name, major, gpa FROM students LEFT JOIN majors ON students.major_id = majors.major_id WHERE major = 'Data Science' OR gpa >= 3.8;"
 do_test "2265.test.js"
 
 echo "--- Test 2270 ---"
-run_psql_log "students" "SELECT * FROM students FULL JOIN majors ON students.major_id = majors.major_id WHERE first_name LIKE '%ri%' OR major LIKE '%ri%';"
+run_psql_log "students" "SELECT * FROM students FULL JOIN majors ON students.major_id = majors.major_id;"
 do_test "2270.test.js"
 
 echo "--- Test 2280 ---"
-run_psql_log "students" "SELECT first_name, major FROM students FULL JOIN majors ON students.major_id = majors.major_id WHERE first_name LIKE '%ri%' OR major LIKE '%ri%';"
+run_psql_log "students" "SELECT * FROM students FULL JOIN majors ON students.major_id = majors.major_id WHERE first_name LIKE '%ri%' OR major LIKE '%ri%';"
 do_test "2280.test.js"
 
 echo "--- Test 2290 ---"
