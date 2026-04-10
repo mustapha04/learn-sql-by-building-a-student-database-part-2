@@ -377,3 +377,54 @@ psql --username=freecodecamp --dbname=students -c "SELECT COUNT(*) FROM students
 __vsc_prompt_cmd_original
 __vsc_prompt_cmd_original
 echo "Background PID: $!"
+pkill -f "automate.sh" 2> /dev/null
+cat /workspace/project/.freeCodeCamp/.mocharc.json
+cat > /workspace/project/student_info.sh <<'EOF' #!/bin/bash # Info about my computer science students from students database echo -e "\n~~ My Computer Science Students ~~\n" PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c" echo -e "\nFirst name, last name, and GPA of students with a 4.0 GPA:" echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE gpa = 4.0")" echo -e "\nAll course names whose first letter is before 'D' in the alphabet:" EOF
+chmod +x /workspace/project/student_info.sh
+python3 -c " content = '''#!/bin/bash # Info about my computer science students from students database echo -e \"\\\\n~~ My Computer Science Students ~~\\\\n\" PSQL=\"psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c\" echo -e \"\\\\nFirst name, last name, and GPA of students with a 4.0 GPA:\" echo \"\$(\$PSQL \"SELECT first_name, last_name, gpa FROM students WHERE gpa = 4.0\")\" echo -e \"\\\\nAll course names whose first letter is before \\x27D\\x27 in the alphabet:\" ''' open('/workspace/project/student_info.sh', 'w').write(content) print('Written', len(content), 'bytes') "
+cat /workspace/project/student_info.sh
+ls --color=auto -la /workspace/project/student_info.sh
+chmod +x /workspace/project/automate2.sh
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+export HISTCONTROL="ignorespace"
+builtin unset VSCODE_PREVENT_SHELL_HISTORY
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups|ignorespace).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=0
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+cd /workspace/project
