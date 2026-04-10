@@ -375,3 +375,5 @@ grep -n "Test 70" /workspace/project/automate.sh
 sed -n '113,117p' /workspace/project/automate.sh
 psql --username=freecodecamp --dbname=students -c "SELECT COUNT(*) FROM students;" -X --no-align --tuples-only 2> /dev/null
 __vsc_prompt_cmd_original
+__vsc_prompt_cmd_original
+echo "Background PID: $!"
