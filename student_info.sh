@@ -58,3 +58,4 @@ echo "$($PSQL "SELECT last_name FROM students WHERE last_name ILIKE '%sa%' OR la
 
 echo -e "\nCourse name of the first five courses, in reverse alphabetical order, that have an 'e' as the second letter or end with an 's':"
 echo "$($PSQL "SELECT major FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL OR first_name ILIKE '%ma%' ORDER BY major")"
+echo "$($PSQL "SELECT DISTINCT(course) FROM students FULL JOIN majors USING(major_id) FULL JOIN majors_courses USING(major_id) FULL JOIN courses USING(course_id) WHERE student_id IS NULL OR first_name = 'Obie' ORDER BY course DESC")"
