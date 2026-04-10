@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Info about my computer science students from students database
 
 echo -e "\n~~ My Computer Science Students ~~\n"
@@ -9,15 +10,3 @@ echo -e "\nFirst name, last name, and GPA of students with a 4.0 GPA:"
 echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE gpa = 4.0")"
 
 echo -e "\nAll course names whose first letter is before 'D' in the alphabet:"
-echo "$($PSQL "SELECT course FROM courses WHERE course < 'D' ORDER BY course")"
-
-echo -e "\nLast name of students whose last name contains a case insensitive 'sa' or have an 'r' as the second to last letter:"
-echo "$($PSQL "SELECT last_name FROM students WHERE last_name ILIKE '%sa%' OR last_name LIKE '%r_'")"
-
-echo -e "\nCourse name of the first five courses, in reverse alphabetical order, that have an 'e' as the second letter or end with an 's':"
-echo "$($PSQL "SELECT course FROM courses WHERE course LIKE '_e%' OR course LIKE '%s' ORDER BY course DESC LIMIT 5")"
-
-echo -e "\nMajor ID, total number of students in a column named 'number_of_students', and average GPA rounded to two decimal places in a column name 'average_gpa', for each major ID in the students table having a student count greater than 1:"
-echo "$($PSQL "SELECT major_id, COUNT(*) AS number_of_students, ROUND(AVG(gpa), 2) AS average_gpa FROM students GROUP BY major_id HAVING COUNT(*) > 1 ORDER BY major_id")"
-echo "$($PSQL "SELECT major FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL OR first_name ILIKE '%ma%' ORDER BY major")"
-echo "$($PSQL "SELECT DISTINCT(course) FROM students FULL JOIN majors USING(major_id) FULL JOIN majors_courses USING(major_id) FULL JOIN courses USING(course_id) WHERE student_id IS NULL OR first_name = 'Obie' ORDER BY course DESC")"
