@@ -8,3 +8,4 @@ PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only
 echo -e "\nFirst name, last name, and GPA of students with a 4.0 GPA:"
 echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE gpa = 4.0")"
 echo "$($PSQL "SELECT course FROM courses WHERE course < 'D' ORDER BY course")"
+echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE last_name >= 'R' AND (gpa > 3.8 OR gpa < 2.0)")"
