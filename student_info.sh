@@ -57,3 +57,4 @@ echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE last_name >
 echo "$($PSQL "SELECT last_name FROM students WHERE last_name ILIKE '%sa%' OR last_name LIKE '%r_'")"
 
 echo -e "\nCourse name of the first five courses, in reverse alphabetical order, that have an 'e' as the second letter or end with an 's':"
+echo "$($PSQL "SELECT major FROM students RIGHT JOIN majors ON students.major_id = majors.major_id WHERE student_id IS NULL OR first_name ILIKE '%ma%' ORDER BY major")"
