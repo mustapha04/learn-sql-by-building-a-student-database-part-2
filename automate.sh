@@ -16,7 +16,7 @@ add_cwd() { echo "$1" >> "$CWD_FILE"; }
 
 run_psql_log() {
   psql --username=freecodecamp --dbname="$1" -c "$2" > /dev/null 2>&1
-  sleep 0.5
+  sleep 1
 }
 
 pipe_psql() {
