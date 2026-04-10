@@ -15,8 +15,20 @@ add_history() { echo "$1" >> "$HISTFILE_PATH"; }
 add_cwd() { echo "$1" >> "$CWD_FILE"; }
 
 run_psql_log() {
+  local log_size_before=$(wc -c < /workspace/pg.log 2>/dev/null || echo 0)
   psql --username=freecodecamp --dbname="$1" -c "$2" > /dev/null 2>&1
-  sleep 2
+  # Wait until pg.log has the statement entry (at least 100 new bytes), max 10s
+  local timeout=20
+  local elapsed=0
+  while [ $elapsed -lt $timeout ]; do
+    local log_size_after=$(wc -c < /workspace/pg.log 2>/dev/null || echo 0)
+    if [ "$log_size_after" -gt "$((log_size_before + 100))" ]; then
+      break
+    fi
+    sleep 0.5
+    elapsed=$((elapsed + 1))
+  done
+  sleep 0.3
 }
 
 pipe_psql() {
