@@ -55,3 +55,5 @@ echo -e "\nList of majors, in alphabetical order, that either no student is taki
 echo "$($PSQL "SELECT course FROM courses WHERE course < 'D' ORDER BY course")"
 echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE last_name >= 'R' AND (gpa > 3.8 OR gpa < 2.0)")"
 echo "$($PSQL "SELECT last_name FROM students WHERE last_name ILIKE '%sa%' OR last_name LIKE '%r_'")"
+
+echo -e "\nCourse name of the first five courses, in reverse alphabetical order, that have an 'e' as the second letter or end with an 's':"
