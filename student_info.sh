@@ -43,3 +43,4 @@ echo -e "\nAll course names whose first letter is before 'D' in the alphabet:"
 echo "$($PSQL "SELECT course FROM courses WHERE course < 'D' ORDER BY course")"
 
 echo -e "\nFirst name, last name, and GPA of students whose last name begins with an 'R' or after and have a GPA greater than 3.8 or less than 2.0:"
+echo "$($PSQL "SELECT last_name FROM students WHERE last_name ILIKE '%sa%' OR last_name LIKE '%r_'")"
