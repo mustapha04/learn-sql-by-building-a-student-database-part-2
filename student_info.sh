@@ -10,3 +10,4 @@ echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE gpa = 4.0")
 echo "$($PSQL "SELECT course FROM courses WHERE course < 'D' ORDER BY course")"
 echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE last_name >= 'R' AND (gpa > 3.8 OR gpa < 2.0)")"
 echo "$($PSQL "SELECT last_name FROM students WHERE last_name ILIKE '%sa%' OR last_name LIKE '%r_'")"
+echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE major_id IS NULL AND (first_name LIKE 'D%' OR gpa > 3.0)")"
