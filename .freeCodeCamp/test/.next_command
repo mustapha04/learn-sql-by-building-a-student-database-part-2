@@ -491,3 +491,81 @@ __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 chmod +x /workspace/project/run_final.sh
 tail -5 /workspace/pg.log
 grep "like\|LIKE" /workspace/pg.log
+cat /workspace/project/.freeCodeCamp/.mocharc.json
+git -C /workspace/project show HEAD:.freeCodeCamp/reset_files/student_info.sh
+git -C /workspace/project checkout HEAD -- .freeCodeCamp/reset_files/student_info.sh
+grep -A3 "1640" /workspace/project/.freeCodeCamp/test/1640.test.js
+cat /workspace/project/.freeCodeCamp/test/1640.test.js
+cat /tmp/final_log.txt
+grep -c "FAILED\|✗" /tmp/final_log.txt
+git -C /workspace/project log --oneline -3
+git -C /workspace/project log --oneline
+git -C /workspace/project show d078745:.freeCodeCamp/reset_files/student_info.sh
+git -C /workspace/project show d078745:.freeCodeCamp/reset_files/student_info.sh > /workspace/project/student_info.sh
+for t in 2230 2240 2245 2250 2260 2265 2270 2280
+ls --color=auto /workspace/project/
+ls --color=auto /workspace/project/run_final.sh 2>&1
+git -C /workspace/project status
+git -C /workspace/project show HEAD:student_info.sh 2> /dev/null
+git -C /workspace/project diff HEAD -- student_info.sh
+git -C /workspace/project stash list
+sed -n '190,270p' /workspace/project/.freeCodeCamp/server.js
+cat /workspace/project/.freeCodeCamp/.mocharc.json
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+ls --color=auto /workspace/project/.freeCodeCamp/test/
+head -500
+for f in $(ls /workspace/project/.freeCodeCamp/test/ | grep -E '^1[8-9]|^2' | sort -V | grep -v '^20\.')
+cat /workspace/project/.freeCodeCamp/test/utils.js
+chmod +x /tmp/run_all.sh
+cd /workspace/project
+cd /workspace/project
+tail -20 /workspace/pg.log
+grep "LOG:" /workspace/pg.log
+cd /workspace/project/.freeCodeCamp
+cd /workspace/project/.freeCodeCamp
+cd /workspace/project
+wc -l /workspace/project/student_info.sh
+[ -d "$HOME/bin" ]
+[ -d "$HOME/.local/bin" ]
+'/vscode/bin/linux-x64/41dd792b5e652393e7787322889ed5fdc58bd75b/node' -p '"02b54c11f35b" + JSON.stringify(process.env) + "02b54c11f35b"'
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups|ignorespace).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+npm start
